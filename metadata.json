@@ -1,0 +1,6 @@
+{
+  "name": "Laporan E-Kinerja",
+  "description": "Formulir mobile-friendly Laporan E-Kinerja yang elegan dan profesional, lengkap dengan kode Google Apps Script untuk koneksi langsung ke Google Sheets.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
