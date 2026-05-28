@@ -4,7 +4,7 @@ import FormInput from './components/FormInput';
 import ReportHistory from './components/ReportHistory';
 import AppsScriptHub from './components/AppsScriptHub';
 import { KinerjaReport, AppSettings } from './types';
-import { Send, FileText, Settings, Sparkles, LayoutGrid, Smartphone, HelpCircle, ArrowRight } from 'lucide-react';
+import { Send, FileText, Settings } from 'lucide-react';
 
 const LOCAL_STORAGE_REPORTS_KEY = 'ekinerja_reports_data';
 const LOCAL_STORAGE_SETTINGS_KEY = 'ekinerja_settings_data';
@@ -115,78 +115,11 @@ export default function App() {
       {/* Premium Natural Ambient Overlay */}
       <div className="absolute top-0 left-0 w-full h-[400px] bg-gradient-to-b from-indigo-150/40 via-indigo-50/10 to-transparent pointer-events-none z-0"></div>
 
-      {/* Grid Layout Container */}
-      <div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-12 gap-6 items-start z-10" id="grid-container">
+      {/* Centered Smartphone Container */}
+      <div className="w-full max-w-sm sm:max-w-md lg:max-w-xl flex justify-center z-10" id="phone-app-container">
         
-        {/* Left column: Desktop Sidebar Instructions */}
-        <div className="hidden lg:col-span-4 lg:flex flex-col space-y-6 mt-2" id="desktop-sidebar-intro">
-          
-          {/* Main Card */}
-          <div className="bg-white border border-slate-100 rounded-[28px] p-6 space-y-5 shadow-xl shadow-slate-250/25">
-            <div className="flex items-center gap-3">
-              <div className="w-9 h-9 bg-indigo-50 text-indigo-600 rounded-xl flex items-center justify-center font-bold shadow-2xs">
-                <Sparkles size={16} className="animate-pulse" />
-              </div>
-              <h3 className="text-slate-900 font-extrabold text-sm tracking-tight">Portal Laporan E-Kinerja</h3>
-            </div>
-            
-            <p className="text-xs leading-relaxed text-slate-500 font-medium">
-              Aplikasi pengisian aktivitas kinerja harian mandiri terintegrasi langsung dengan Google Sheets. Dioptimalkan penuh untuk kenyamanan akses smartphone.
-            </p>
-            
-            <div className="border-t border-slate-50 pt-4 space-y-3.5">
-              <span className="block text-[10px] uppercase font-bold text-indigo-600 tracking-wider">FITUR UNGGULAN</span>
-              
-              <div className="flex gap-2.5 items-start text-[11px] text-slate-600 font-medium">
-                <span className="text-indigo-600 font-bold">✓</span>
-                <span><strong>Instant Sync</strong>: Otomatis terunggah ke Google Sheet pribadi anda via Apps Script.</span>
-              </div>
-              
-              <div className="flex gap-2.5 items-start text-[11px] text-slate-600 font-medium">
-                <span className="text-indigo-600 font-bold">✓</span>
-                <span><strong>Berkas Otomatis</strong>: Foto bukti disimpan di Drive & tautan disisipkan otomatis.</span>
-              </div>
-              
-              <div className="flex gap-2.5 items-start text-[11px] text-slate-600 font-medium">
-                <span className="text-indigo-600 font-bold">✓</span>
-                <span><strong>Template Adaptif</strong>: Dilengkapi saran transkrip siap pakai sekali klik.</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Columns Specification Card */}
-          <div className="bg-indigo-950 rounded-[28px] p-6 text-indigo-150 shadow-xl shadow-indigo-950/20" id="desktop-sidebar-sheet-spec">
-            <span className="block text-[10px] text-indigo-300 font-extrabold uppercase tracking-widest mb-3">Model Struktur Sheet (A-E)</span>
-            <div className="space-y-2 font-mono text-[11px]">
-              <div className="flex justify-between pb-1.5 border-b border-indigo-900/60">
-                <span className="text-indigo-400">Kolom A:</span>
-                <span className="font-semibold text-white">Tanggal</span>
-              </div>
-              <div className="flex justify-between pb-1.5 border-b border-indigo-900/60">
-                <span className="text-indigo-400">Kolom B:</span>
-                <span className="font-semibold text-white">Waktu</span>
-              </div>
-              <div className="flex justify-between pb-1.5 border-b border-indigo-900/60">
-                <span className="text-indigo-400">Kolom C:</span>
-                <span className="font-semibold text-white">Uraian Kinerja</span>
-              </div>
-              <div className="flex justify-between pb-1.5 border-b border-indigo-900/60">
-                <span className="text-indigo-400">Kolom D:</span>
-                <span className="font-semibold text-white">Foto Bukti (Drive)</span>
-              </div>
-              <div className="flex justify-between pb-1">
-                <span className="text-indigo-400">Kolom E:</span>
-                <span className="font-semibold text-white">Link Penjelas</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Right column: Interactive Smartphone Container */}
-        <div className="lg:col-span-8 w-full flex justify-center" id="phone-app-container">
-          
-          {/* Smartphone Simulator Frame Wrapper on Desktop */}
-          <div className="w-full max-w-sm sm:max-w-md lg:max-w-xl bg-slate-950 lg:border-[10px] lg:border-slate-800 lg:rounded-[42px] lg:shadow-2xl overflow-hidden relative flex flex-col justify-between" style={{ minHeight: '100vh', maxHeight: '100vh' }} id="simulated-smartphone">
+        {/* Smartphone Simulator Frame Wrapper on Desktop */}
+        <div className="w-full bg-slate-950 lg:border-[10px] lg:border-slate-800 lg:rounded-[42px] lg:shadow-2xl overflow-hidden relative flex flex-col justify-between" style={{ minHeight: '100vh', maxHeight: '100vh' }} id="simulated-smartphone">
             
             {/* Top Ear Speaker Indicator (Invisible on actual phone screens) */}
             <div className="hidden lg:block absolute top-2.5 left-1/2 transform -translate-x-1/2 w-28 h-4 bg-slate-800 rounded-full z-20"></div>
@@ -278,8 +211,6 @@ export default function App() {
           </div>
 
         </div>
-
-      </div>
 
     </div>
   );
